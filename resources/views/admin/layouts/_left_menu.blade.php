@@ -6,12 +6,7 @@
             <span class="title">Dashboard 1</span>
         </a>
     </li>
-    <li {!! (Request::is('admin/index1') ? 'class="active"' : '' ) !!}>
-        <a href="{{  URL::to('admin/index1') }}">
-            <i class="livicon" data-name="dashboard" data-size="18" data-c="#EF6F6C" data-hc="#EF6F6C" data-loop="true"></i>
-            Dashboard 2
-        </a>
-    </li>
+
 
     <li {!! (Request::is('admin/generator_builder') ? 'class="active"' : '' ) !!}>
         <a href="{{ URL('admin/generator_builder') }}">
@@ -19,17 +14,10 @@
             CRUD Generator
         </a>
     </li>
-    <li {!! (Request::is('admin/log_viewers') || Request::is('admin/log_viewers/logs') ? 'class="active"' : '' ) !!}>
-
-        <a href="{{  URL::to('admin/log_viewers') }}">
-            <i class="livicon" data-name="help" data-size="18" data-c="#1DA1F2" data-hc="#1DA1F2" data-loop="true"></i>
-            Log Viewer
-        </a>
-    </li>
     <li {!! (Request::is('admin/activity_log') ? 'class="active"' : '' ) !!}>
         <a href="{{  URL::to('admin/activity_log') }}">
             <i class="livicon" data-name="eye-open" data-size="18" data-c="#F89A14" data-hc="#F89A14" data-loop="true"></i>
-            Activity Log
+            Log de Atividades do Sistema
         </a>
     </li>
     <li {!! (Request::is('admin/datatables') || Request::is('admin/editable_datatables') || Request::is('admin/dropzone') || Request::is('admin/multiple_upload') || Request::is('admin/custom_datatables')|| Request::is('admin/selectfilter') ? 'class="active"' : '' ) !!}>

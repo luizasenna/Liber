@@ -32,7 +32,6 @@
     <a href="{!! route('admin.tipos.index') !!}">
     <i class="livicon" data-c="#418BCA" data-hc="#418BCA" data-name="thumbnails-big" data-size="18"
                data-loop="true"></i>
-               Tipos
+               Tipos de Livros
     </a>
 </li>
-
