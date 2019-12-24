@@ -46,3 +46,33 @@ Route::get('autors/{autors}', ['as'=> 'autors.show', 'uses' => 'AutorController@
 Route::get('autors/{autors}/edit', ['as'=> 'autors.edit', 'uses' => 'AutorController@edit']);
 
 });
+
+
+Route::group(array('prefix' => 'admin/','namespace' => 'Admin','middleware' => 'admin','as'=>'admin.'), function () {
+
+Route::get('classificacaos', ['as'=> 'classificacaos.index', 'uses' => 'ClassificacaoController@index']);
+Route::post('classificacaos', ['as'=> 'classificacaos.store', 'uses' => 'ClassificacaoController@store']);
+Route::get('classificacaos/create', ['as'=> 'classificacaos.create', 'uses' => 'ClassificacaoController@create']);
+Route::put('classificacaos/{classificacaos}', ['as'=> 'classificacaos.update', 'uses' => 'ClassificacaoController@update']);
+Route::patch('classificacaos/{classificacaos}', ['as'=> 'classificacaos.update', 'uses' => 'ClassificacaoController@update']);
+Route::get('classificacaos/{id}/delete', array('as' => 'classificacaos.delete', 'uses' => 'ClassificacaoController@getDelete'));
+Route::get('classificacaos/{id}/confirm-delete', array('as' => 'classificacaos.confirm-delete', 'uses' => 'ClassificacaoController@getModalDelete'));
+Route::get('classificacaos/{classificacaos}', ['as'=> 'classificacaos.show', 'uses' => 'ClassificacaoController@show']);
+Route::get('classificacaos/{classificacaos}/edit', ['as'=> 'classificacaos.edit', 'uses' => 'ClassificacaoController@edit']);
+
+});
+
+
+Route::group(array('prefix' => 'admin/','namespace' => 'Admin','middleware' => 'admin','as'=>'admin.'), function () {
+
+Route::get('classificacaos', ['as'=> 'classificacaos.index', 'uses' => 'ClassificacaoController@index']);
+Route::post('classificacaos', ['as'=> 'classificacaos.store', 'uses' => 'ClassificacaoController@store']);
+Route::get('classificacaos/create', ['as'=> 'classificacaos.create', 'uses' => 'ClassificacaoController@create']);
+Route::put('classificacaos/{classificacaos}', ['as'=> 'classificacaos.update', 'uses' => 'ClassificacaoController@update']);
+Route::patch('classificacaos/{classificacaos}', ['as'=> 'classificacaos.update', 'uses' => 'ClassificacaoController@update']);
+Route::get('classificacaos/{id}/delete', array('as' => 'classificacaos.delete', 'uses' => 'ClassificacaoController@getDelete'));
+Route::get('classificacaos/{id}/confirm-delete', array('as' => 'classificacaos.confirm-delete', 'uses' => 'ClassificacaoController@getModalDelete'));
+Route::get('classificacaos/{classificacaos}', ['as'=> 'classificacaos.show', 'uses' => 'ClassificacaoController@show']);
+Route::get('classificacaos/{classificacaos}/edit', ['as'=> 'classificacaos.edit', 'uses' => 'ClassificacaoController@edit']);
+
+});

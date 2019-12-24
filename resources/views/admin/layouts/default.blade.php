@@ -177,7 +177,18 @@
         @yield('content')
 
         <div class="row" class="min-height:400px;">
-           <span class="col-12"> Feito com amor por Soror Azuli. </span>
+          <div class=" col-md-5 col-sm-1 col-sm-1 "> </div>
+
+           <div class=" col-md-4 col-sm-10 col-sm-10 text-center pull-center">
+
+               Feito com  <i class="livicon" data-name="heart" data-s="15" style="color:red;"></i> por Soror Azuli  <br/> Versão 1.3 - Server cloudways - Release 24/12/2019 </div>
+
+         <!-- Analytics Solid CI-->
+
+          <!-- Analytics Solid CI-->
+
+          <div class="col-md-3 col-sm-1 col-sm-1"></div>
+
         </div>
     </aside>
     <!-- right-side -->
