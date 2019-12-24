@@ -12,3 +12,19 @@
                Classificacao
     </a>
 </li>
+<li class="{{ Request::is('admin/editoras*') ? 'active' : '' }}">
+    <a href="{!! route('admin.editoras.index') !!}">
+    <i class="livicon" data-c="#418BCA" data-hc="#418BCA" data-name="gear" data-size="18"
+               data-loop="true"></i>
+               Editoras
+    </a>
+</li>
+
+<li class="{{ Request::is('admin/pessoas*') ? 'active' : '' }}">
+    <a href="{!! route('admin.pessoas.index') !!}">
+    <i class="livicon" data-c="#EF6F6C" data-hc="#EF6F6C" data-name="gear" data-size="18"
+               data-loop="true"></i>
+               Pessoas
+    </a>
+</li>
+

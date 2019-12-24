@@ -76,3 +76,33 @@ Route::get('classificacao/{classificacao}', ['as'=> 'classificacao.show', 'uses'
 Route::get('classificacao/{classificacao}/edit', ['as'=> 'classificacao.edit', 'uses' => 'ClassificacaoController@edit']);
 
 });
+
+
+Route::group(array('prefix' => 'admin/','namespace' => 'Admin','middleware' => 'admin','as'=>'admin.'), function () {
+
+Route::get('editoras', ['as'=> 'editoras.index', 'uses' => 'EditoraController@index']);
+Route::post('editoras', ['as'=> 'editoras.store', 'uses' => 'EditoraController@store']);
+Route::get('editoras/create', ['as'=> 'editoras.create', 'uses' => 'EditoraController@create']);
+Route::put('editoras/{editoras}', ['as'=> 'editoras.update', 'uses' => 'EditoraController@update']);
+Route::patch('editoras/{editoras}', ['as'=> 'editoras.update', 'uses' => 'EditoraController@update']);
+Route::get('editoras/{id}/delete', array('as' => 'editoras.delete', 'uses' => 'EditoraController@getDelete'));
+Route::get('editoras/{id}/confirm-delete', array('as' => 'editoras.confirm-delete', 'uses' => 'EditoraController@getModalDelete'));
+Route::get('editoras/{editoras}', ['as'=> 'editoras.show', 'uses' => 'EditoraController@show']);
+Route::get('editoras/{editoras}/edit', ['as'=> 'editoras.edit', 'uses' => 'EditoraController@edit']);
+
+});
+
+
+Route::group(array('prefix' => 'admin/','namespace' => 'Admin','middleware' => 'admin','as'=>'admin.'), function () {
+
+Route::get('pessoas', ['as'=> 'pessoas.index', 'uses' => 'PessoaController@index']);
+Route::post('pessoas', ['as'=> 'pessoas.store', 'uses' => 'PessoaController@store']);
+Route::get('pessoas/create', ['as'=> 'pessoas.create', 'uses' => 'PessoaController@create']);
+Route::put('pessoas/{pessoas}', ['as'=> 'pessoas.update', 'uses' => 'PessoaController@update']);
+Route::patch('pessoas/{pessoas}', ['as'=> 'pessoas.update', 'uses' => 'PessoaController@update']);
+Route::get('pessoas/{id}/delete', array('as' => 'pessoas.delete', 'uses' => 'PessoaController@getDelete'));
+Route::get('pessoas/{id}/confirm-delete', array('as' => 'pessoas.confirm-delete', 'uses' => 'PessoaController@getModalDelete'));
+Route::get('pessoas/{pessoas}', ['as'=> 'pessoas.show', 'uses' => 'PessoaController@show']);
+Route::get('pessoas/{pessoas}/edit', ['as'=> 'pessoas.edit', 'uses' => 'PessoaController@edit']);
+
+});
