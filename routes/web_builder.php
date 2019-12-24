@@ -106,3 +106,18 @@ Route::get('pessoas/{pessoas}', ['as'=> 'pessoas.show', 'uses' => 'PessoaControl
 Route::get('pessoas/{pessoas}/edit', ['as'=> 'pessoas.edit', 'uses' => 'PessoaController@edit']);
 
 });
+
+
+Route::group(array('prefix' => 'admin/','namespace' => 'Admin','middleware' => 'admin','as'=>'admin.'), function () {
+
+Route::get('tipos', ['as'=> 'tipos.index', 'uses' => 'TiposController@index']);
+Route::post('tipos', ['as'=> 'tipos.store', 'uses' => 'TiposController@store']);
+Route::get('tipos/create', ['as'=> 'tipos.create', 'uses' => 'TiposController@create']);
+Route::put('tipos/{tipos}', ['as'=> 'tipos.update', 'uses' => 'TiposController@update']);
+Route::patch('tipos/{tipos}', ['as'=> 'tipos.update', 'uses' => 'TiposController@update']);
+Route::get('tipos/{id}/delete', array('as' => 'tipos.delete', 'uses' => 'TiposController@getDelete'));
+Route::get('tipos/{id}/confirm-delete', array('as' => 'tipos.confirm-delete', 'uses' => 'TiposController@getModalDelete'));
+Route::get('tipos/{tipos}', ['as'=> 'tipos.show', 'uses' => 'TiposController@show']);
+Route::get('tipos/{tipos}/edit', ['as'=> 'tipos.edit', 'uses' => 'TiposController@edit']);
+
+});

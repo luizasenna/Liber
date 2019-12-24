@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Login</title>
+    <title>Entrar no Sistema</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- global level css -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
@@ -56,7 +56,7 @@
                               class="my-3">
                             <h3 class="black_bg">
                                 <img src="{{ asset('img/logo.png') }}" alt="josh logo">
-                                <br>Log In</h3>
+                                <br>Entrar</h3>
                             <!-- CSRF Token -->
                             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                             <div class="form-group {{ $errors->first('email', 'has-error') }}">
@@ -78,7 +78,7 @@
                                                                                                        data-loop="true"
                                                                                                        data-c="#3c8dbc"
                                                                                                        data-hc="#3c8dbc"></i>
-                                    Password
+                                    Senha
                                 </label>
                                 <input id="password" name="password" type="password" placeholder="Enter a password"/>
                                 <div class="col-sm-12">
@@ -89,147 +89,31 @@
                                 <label>
                                     <input type="checkbox" name="remember-me" id="remember-me" value="remember-me"
                                            class="square-blue"/>
-                                    Keep me logged in
+                                    Mantenha-me logado(a)
                                 </label>
                             </div>
                             <p class="login button">
-                                <input type="submit" value="Log In" class="btn btn-success"/>
+                                <input type="submit" value="Acessar" class="btn btn-success"/>
                             </p>
                             <p class="change_link">
                                 <a href="#toforgot">
                                     <button type="button"
-                                            class="btn btn-responsive botton-alignment btn-warning btn-sm">Forgot
-                                        password
+                                            class="btn btn-responsive botton-alignment btn-warning btn-sm">Esqueci a senha
                                     </button>
                                 </a>
-                                <a href="#toregister">
-                                    <button type="button" id="signup"
-                                            class="btn btn-responsive botton-alignment btn-success btn-sm"
-                                            style="float:right;">Sign Up
-                                    </button>
-                                </a>
+
                             </p>
-                            <div class="row">
-                                <div class="col-lg-12 text-center social_login mb-3">
-                                    <a class="btn btn-block btn-social btn-facebook" href="{{ url('/facebook') }}">
-                                        <i class="fab fa-facebook-f"></i> Sign in with Facebook
-                                    </a>
-                                    <a class="btn btn-block btn-social btn-google-plus" href="{{ url('/google') }}">
-                                        <i class="fab fa-google-plus-g"></i> Sign in with Google
-                                    </a>
-                                    <a class="btn btn-block btn-social btn-linkedin" href="{{ url('/linkedin') }}">
-                                        <i class="fab fa-linkedin-in"></i> Sign in with LinkedIn
-                                    </a>
-                                </div>
-                            </div>
+
                         </form>
                     </div>
-                    <div id="register" class="animate form">
-                        <form action="{{ route('admin.signup') }}" autocomplete="on" method="post" role="form"
-                              id="register_here">
-                            <h3 class="black_bg my-3">
-                                <img src="{{ asset('img/logo.png') }}" alt="josh logo">
-                                <br>Log In</h3>
-                            <!-- CSRF Token -->
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
-                            <div class="form-group {{ $errors->first('first_name', 'has-error') }}">
-                                <label style="margin-bottom:0px;" for="first_name" class="youmail">
-                                    <i class="livicon" data-name="user" data-size="16" data-loop="true" data-c="#3c8dbc"
-                                       data-hc="#3c8dbc"></i>
-                                    First Name
-                                </label>
-                                <input id="first_name" name="first_name" required type="text" placeholder="John"
-                                       value="{!! old('first_name') !!}"/>
-                                <div class="col-sm-12">
-                                    {!! $errors->first('first_name', '<span class="help-block">:message</span>') !!}
-                                </div>
-                            </div>
-
-                            <div class="form-group {{ $errors->first('last_name', 'has-error') }}">
-                                <label style="margin-bottom:0px;" for="last_name" class="youmail">
-                                    <i class="livicon" data-name="user" data-size="16" data-loop="true" data-c="#3c8dbc"
-                                       data-hc="#3c8dbc"></i>
-                                    Last Name
-                                </label>
-                                <input id="last_name" name="last_name" required type="text" placeholder="Doe"
-                                       value="{!! old('last_name') !!}"/>
-                                <div class="col-sm-12">
-                                    {!! $errors->first('last_name', '<span class="help-block">:message</span>') !!}
-                                </div>
-                            </div>
-
-                            <div class="form-group {{ $errors->first('email', 'has-error') }}">
-                                <label style="margin-bottom:0px;" for="email1" class="youmail">
-                                    <i class="livicon" data-name="mail" data-size="16" data-loop="true" data-c="#3c8dbc"
-                                       data-hc="#3c8dbc"></i>
-                                    E-mail
-                                </label>
-                                <input id="email1" name="email" value="{!! old('email') !!}" required type="email"
-                                       placeholder="mysupermail@mail.com"/>
-                                <div class="col-sm-12">
-                                    {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
-                                </div>
-                            </div>
-
-                            <div class="form-group {{ $errors->first('email_confirm', 'has-error') }}">
-                                <label style="margin-bottom:0px;" for="email_confirm" class="youmail">
-                                    <i class="livicon" data-name="mail" data-size="16" data-loop="true" data-c="#3c8dbc"
-                                       data-hc="#3c8dbc"></i>
-                                    Confirm E-mail
-                                </label>
-                                <input id="email_confirm" name="email_confirm" required type="email"
-                                       placeholder="mysupermail@mail.com" value="{!! old('email_confirm') !!}"/>
-                                <div class="col-sm-12">
-                                    {!! $errors->first('email_confirm', '<span class="help-block">:message</span>') !!}
-                                </div>
-                            </div>
-
-                            <div class="form-group {{ $errors->first('password', 'has-error') }}">
-                                <label style="margin-bottom:0px;" for="password1" class="youpasswd">
-                                    <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#3c8dbc"
-                                       data-hc="#3c8dbc"></i>
-                                    Password
-                                </label>
-                                <input id="password1" name="password" required type="password" placeholder="Password"/>
-                                <div class="col-sm-12">
-                                    {!! $errors->first('password', '<span class="help-block">:message</span>') !!}
-                                </div>
-                            </div>
-
-                            <div class="form-group {{ $errors->first('password_confirm', 'has-error') }}">
-                                <label style="margin-bottom:0px;" for="password_confirm" class="youpasswd">
-                                    <i class="livicon" data-name="key" data-size="16" data-loop="true" data-c="#3c8dbc"
-                                       data-hc="#3c8dbc"></i>
-                                    Confirm Password
-                                </label>
-                                <input id="password_confirm" name="password_confirm" required type="password"
-                                       placeholder="Confirm Password"/>
-                                <div class="col-sm-12">
-                                    {!! $errors->first('password_confirm', '<span class="help-block">:message</span>') !!}
-                                </div>
-                            </div>
-                            <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
-                            <p class="signin button">
-                                <input type="submit" class="btn btn-success" value="Sign Up"/>
-                            </p>
-                            <p class="change_link">
-                                <a href="#tologin" class="to_register">
-                                    <button type="button"
-                                            class="btn btn-responsive botton-alignment btn-warning btn-sm">Back
-                                    </button>
-                                </a>
-                            </p>
-                        </form>
-                    </div>
                     <div id="forgot" class="animate form">
                         <form action="{{ url('admin/forgot-password') }}" autocomplete="on" method="post" role="form"
                               id="reset_pw">
                             <h3 class="black_bg my-3">
-                                <img src="{{ asset('img/logo.png') }}" alt="josh logo"><br>Forgot Password</h3>
+                                <img src="{{ asset('img/logo.png') }}" alt="josh logo"><br>Esqueci a senha</h3>
                             <p style="font-size:14px !important;">
-                                Enter your email address below and we'll send a special reset password link to your
-                                inbox.
+                                Insira seu endereço de email abaixo e enviaremos um link para reset de senha.
                             </p>
 
                             <!-- CSRF Token -->
@@ -239,21 +123,21 @@
                                 <label style="margin-bottom:0px;" for="email2" class="youmai">
                                     <i class="livicon" data-name="mail" data-size="16" data-loop="true" data-c="#3c8dbc"
                                        data-hc="#3c8dbc"></i>
-                                    Your email
+                                    Seu email
                                 </label>
-                                <input id="email2" name="email" required type="email" placeholder="your@mail.com"
+                                <input id="email2" name="email" required type="email" placeholder="seuemail@mail.com"
                                        value="{!! old('email') !!}"/>
                                 <div class="col-sm-12">
                                     {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
                                 </div>
                             </div>
                             <p class="login button">
-                                <input type="submit" value="Reset Password" class="btn btn-success"/>
+                                <input type="submit" value="Resetar Senha" class="btn btn-success"/>
                             </p>
                             <p class="change_link">
                                 <a href="#tologin" class="to_register">
                                     <button type="button"
-                                            class="btn btn-responsive botton-alignment btn-warning btn-sm">Back
+                                            class="btn btn-responsive botton-alignment btn-warning btn-sm">Voltar
                                     </button>
                                 </a>
                             </p>

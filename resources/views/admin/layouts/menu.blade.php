@@ -28,3 +28,11 @@
     </a>
 </li>
 
+<li class="{{ Request::is('admin/tipos*') ? 'active' : '' }}">
+    <a href="{!! route('admin.tipos.index') !!}">
+    <i class="livicon" data-c="#418BCA" data-hc="#418BCA" data-name="thumbnails-big" data-size="18"
+               data-loop="true"></i>
+               Tipos
+    </a>
+</li>
+
