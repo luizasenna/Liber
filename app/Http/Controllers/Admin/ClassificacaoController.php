@@ -34,9 +34,9 @@ class ClassificacaoController extends InfyOmBaseController
     {
 
         $this->classificacaoRepository->pushCriteria(new RequestCriteria($request));
-        $classificacaos = $this->classificacaoRepository->all();
-        return view('admin.classificacaos.index')
-            ->with('classificacaos', $classificacaos);
+        $classificacao = $this->classificacaoRepository->all();
+        return view('admin.classificacao.index')
+            ->with('classificacao', $classificacao);
     }
 
     /**
@@ -46,7 +46,7 @@ class ClassificacaoController extends InfyOmBaseController
      */
     public function create()
     {
-        return view('admin.classificacaos.create');
+        return view('admin.classificacao.create');
     }
 
     /**
@@ -64,7 +64,7 @@ class ClassificacaoController extends InfyOmBaseController
 
         Flash::success('Classificacao saved successfully.');
 
-        return redirect(route('admin.classificacaos.index'));
+        return redirect(route('admin.classificacao.index'));
     }
 
     /**
@@ -81,10 +81,10 @@ class ClassificacaoController extends InfyOmBaseController
         if (empty($classificacao)) {
             Flash::error('Classificacao not found');
 
-            return redirect(route('classificacaos.index'));
+            return redirect(route('classificacao.index'));
         }
 
-        return view('admin.classificacaos.show')->with('classificacao', $classificacao);
+        return view('admin.classificacao.show')->with('classificacao', $classificacao);
     }
 
     /**
@@ -101,10 +101,10 @@ class ClassificacaoController extends InfyOmBaseController
         if (empty($classificacao)) {
             Flash::error('Classificacao not found');
 
-            return redirect(route('classificacaos.index'));
+            return redirect(route('classificacao.index'));
         }
 
-        return view('admin.classificacaos.edit')->with('classificacao', $classificacao);
+        return view('admin.classificacao.edit')->with('classificacao', $classificacao);
     }
 
     /**
@@ -119,19 +119,19 @@ class ClassificacaoController extends InfyOmBaseController
     {
         $classificacao = $this->classificacaoRepository->findWithoutFail($id);
 
-        
+
 
         if (empty($classificacao)) {
             Flash::error('Classificacao not found');
 
-            return redirect(route('classificacaos.index'));
+            return redirect(route('classificacao.index'));
         }
 
         $classificacao = $this->classificacaoRepository->update($request->all(), $id);
 
         Flash::success('Classificacao updated successfully.');
 
-        return redirect(route('admin.classificacaos.index'));
+        return redirect(route('admin.classificacao.index'));
     }
 
     /**
@@ -145,7 +145,7 @@ class ClassificacaoController extends InfyOmBaseController
       {
           $error = '';
           $model = '';
-          $confirm_route =  route('admin.classificacaos.delete',['id'=>$id]);
+          $confirm_route =  route('admin.classificacao.delete',['id'=>$id]);
           return View('admin.layouts/modal_confirmation', compact('error','model', 'confirm_route'));
 
       }
@@ -155,7 +155,7 @@ class ClassificacaoController extends InfyOmBaseController
            $sample = Classificacao::destroy($id);
 
            // Redirect to the group management page
-           return redirect(route('admin.classificacaos.index'))->with('success', Lang::get('message.success.delete'));
+           return redirect(route('admin.classificacao.index'))->with('success', Lang::get('message.success.delete'));
 
        }
 

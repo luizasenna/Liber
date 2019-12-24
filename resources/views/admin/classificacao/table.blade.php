@@ -1,22 +1,24 @@
-<table class="table table-bordered table-hover" id="classificacaos-table">
+<table class="table table-bordered table-hover" id="classificacao-table">
     <thead class="thead-light">
      <tr>
+        <th>Código</th>
         <th>Nome</th>
-        <th>Action</th>
+        <th>Ação</th>
      </tr>
     </thead>
     <tbody>
-    @foreach($classificacaos as $classificacao)
+    @foreach($classificacao as $classificacao)
         <tr>
+            <td>{!! $classificacao->id !!}</td>
             <td>{!! $classificacao->nome !!}</td>
             <td>
-                 <a href="{{ route('admin.classificacaos.show', $classificacao->id) }}">
+                 <a href="{{ route('admin.classificacao.show', $classificacao->id) }}">
                      <i class="livicon" data-name="info" data-size="18" data-loop="true" data-c="#428BCA" data-hc="#428BCA" title="view classificacao"></i>
                  </a>
-                 <a href="{{ route('admin.classificacaos.edit', $classificacao->id) }}">
+                 <a href="{{ route('admin.classificacao.edit', $classificacao->id) }}">
                      <i class="livicon" data-name="edit" data-size="18" data-loop="true" data-c="#428BCA" data-hc="#428BCA" title="edit classificacao"></i>
                  </a>
-                 <a href="{{ route('admin.classificacaos.confirm-delete', $classificacao->id) }}" data-toggle="modal" data-target="#delete_confirm">
+                 <a href="{{ route('admin.classificacao.confirm-delete', $classificacao->id) }}" data-toggle="modal" data-target="#delete_confirm">
                      <i class="livicon" data-name="remove-alt" data-size="18" data-loop="true" data-c="#f56954" data-hc="#f56954" title="delete classificacao"></i>
                  </a>
             </td>

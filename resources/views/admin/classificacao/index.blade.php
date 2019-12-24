@@ -1,22 +1,22 @@
 @extends('admin/layouts/default')
 
 @section('title')
-Classificacaos
+classificacao
 @parent
 @stop
 
 {{-- Page content --}}
 @section('content')
 <section class="content-header">
-    <h1>Classificacaos</h1>
+    <h1>Classificações</h1>
     <ol class="breadcrumb">
         <li>
             <a href="{{ route('admin.dashboard') }}"> <i class="livicon" data-name="home" data-size="16" data-color="#000"></i>
                 Dashboard
             </a>
         </li>
-        <li>Classificacaos</li>
-        <li class="active">Classificacaos List</li>
+        <li>Classificações</li>
+        <li class="active">Lista de classificações</li>
     </ol>
 </section>
 
@@ -28,16 +28,16 @@ Classificacaos
         <div class="card border-primary ">
             <div class="card-header bg-primary text-white">
                 <h4 class="card-title float-left"> <i class="livicon" data-name="list-ul" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                    Classificacaos List
+                    Lista de Classificações
                 </h4>
                 <div class="float-right">
-                    <a href="{{ route('admin.classificacaos.create') }}" class="btn btn-sm btn-default"><span class="fa fa-plus"></span> @lang('button.create')</a>
+                    <a href="{{ route('admin.classificacao.create') }}" class="btn btn-sm btn-default"><span class="fa fa-plus"></span> @lang('button.create')</a>
                 </div>
             </div>
             <br />
             <div class="card-body table-responsive">
-                 @include('admin.classificacaos.table')
-                 
+                 @include('admin.classificacao.table')
+
             </div>
         </div>
         </div>

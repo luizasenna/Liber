@@ -7,15 +7,15 @@ Classificacao
 
 @section('content')
 <section class="content-header">
-    <h1>Classificacao View</h1>
+    <h1>Classificações</h1>
     <ol class="breadcrumb">
         <li>
             <a href="{{ route('admin.dashboard') }}"> <i class="livicon" data-name="home" data-size="16" data-color="#000"></i>
                 Dashboard
             </a>
         </li>
-        <li>Classificacaos</li>
-        <li class="active">Classificacao View</li>
+        <li>Classificações</li>
+        <li class="active">Classificações</li>
     </ol>
 </section>
 
@@ -26,16 +26,16 @@ Classificacao
        <div class="card border-primary">
                 <div class="card-header bg-primary text-white">
                     <h4 class="card-title"> <i class="livicon" data-name="list-ul" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                        Classificacao details
+                        Deatlhes da Classificação
                     </h4>
                 </div>
                     <div class="card-body">
-                        @include('admin.classificacaos.show_fields')
+                        @include('admin.classificacao.show_fields')
                     </div>
                 </div>
 
     <div class="form-group">
-           <a href="{!! route('admin.classificacaos.index') !!}" class="btn btn-warning mt-2">Back</a>
+           <a href="{!! route('admin.classificacao.index') !!}" class="btn btn-warning mt-2">Voltar</a>
     </div>
      </div>
      </div>

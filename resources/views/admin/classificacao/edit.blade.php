@@ -1,21 +1,21 @@
 @extends('admin/layouts/default')
 
 @section('title')
-Classificacaos
+classificacao
 @parent
 @stop
 @section('content')
   @include('common.errors')
     <section class="content-header">
-     <h1>Classificacaos Edit</h1>
+     <h1>Edição de Classificação</h1>
      <ol class="breadcrumb">
          <li>
              <a href="{{ route('admin.dashboard') }}"> <i class="livicon" data-name="home" data-size="16" data-color="#000"></i>
                  Dashboard
              </a>
          </li>
-         <li>Classificacaos</li>
-         <li class="active">Edit Classificacao </li>
+         <li>Classificação</li>
+         <li class="active">Edição de Classificação</li>
      </ol>
     </section>
     <section class="content">
@@ -25,13 +25,13 @@ Classificacaos
               <div class="card border-primary">
                     <div class="card-header bg-primary text-white">
                         <h4 class="card-title"> <i class="livicon" data-name="user" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                            Edit  Classificacao
+                            Edição de Classificação
                         </h4></div>
                     <br />
                 <div class="card-body">
-                {!! Form::model($classificacao, ['route' => ['admin.classificacaos.update', collect($classificacao)->first() ], 'method' => 'patch']) !!}
+                {!! Form::model($classificacao, ['route' => ['admin.classificacao.update', collect($classificacao)->first() ], 'method' => 'patch']) !!}
 
-                @include('admin.classificacaos.fields')
+                @include('admin.classificacao.fields')
 
                 {!! Form::close() !!}
                 </div>

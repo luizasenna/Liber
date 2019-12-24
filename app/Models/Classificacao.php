@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class Classificacao extends Model
 {
 
-    public $table = 'Classificacao';
-    
+    public $table = 'classificacao';
+
 
 
     public $fillable = [
@@ -32,6 +32,6 @@ class Classificacao extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 }

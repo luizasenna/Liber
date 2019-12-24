@@ -8,15 +8,15 @@ Classificacao
 @section('content')
 @include('common.errors')
 <section class="content-header">
-    <h1>Classificacao</h1>
+    <h1>Classificação</h1>
     <ol class="breadcrumb">
         <li>
             <a href="{{ route('admin.dashboard') }}"> <i class="livicon" data-name="home" data-size="16" data-color="#000"></i>
                 Dashboard
             </a>
         </li>
-        <li>Classificacaos</li>
-        <li class="active">Create Classificacao </li>
+        <li>Classificação</li>
+        <li class="active">Criar Nova Classificação </li>
     </ol>
 </section>
 <section class="content">
@@ -26,13 +26,13 @@ Classificacao
      <div class="card border-primary">
             <div class="card-header bg-primary text-white">
                 <h4 class="card-title"> <i class="livicon" data-name="user" data-size="16" data-loop="true" data-c="#fff" data-hc="white"></i>
-                    Create New  Classificacao
+                    Criar Nova Classificação
                 </h4></div>
             <br />
             <div class="card-body">
-            {!! Form::open(['route' => 'admin.classificacaos.store']) !!}
+            {!! Form::open(['route' => 'admin.classificacao.store']) !!}
 
-                @include('admin.classificacaos.fields')
+                @include('admin.classificacao.fields')
 
             {!! Form::close() !!}
         </div>
