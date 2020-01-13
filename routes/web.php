@@ -328,7 +328,7 @@ Route::post('contact', 'FrontEndController@postContact')->name('contact');
 Route::get(
     '/',
     ['as' => 'home', function () {
-        return view('index');
+        return view('admin.index');
     }]
 );
 
