@@ -121,3 +121,18 @@ Route::get('tipos/{tipos}', ['as'=> 'tipos.show', 'uses' => 'TiposController@sho
 Route::get('tipos/{tipos}/edit', ['as'=> 'tipos.edit', 'uses' => 'TiposController@edit']);
 
 });
+
+
+Route::group(array('prefix' => 'admin/','namespace' => 'Admin','middleware' => 'admin','as'=>'admin.'), function () {
+
+Route::get('emprestimos', ['as'=> 'emprestimos.index', 'uses' => 'EmprestimoController@index']);
+Route::post('emprestimos', ['as'=> 'emprestimos.store', 'uses' => 'EmprestimoController@store']);
+Route::get('emprestimos/create', ['as'=> 'emprestimos.create', 'uses' => 'EmprestimoController@create']);
+Route::put('emprestimos/{emprestimos}', ['as'=> 'emprestimos.update', 'uses' => 'EmprestimoController@update']);
+Route::patch('emprestimos/{emprestimos}', ['as'=> 'emprestimos.update', 'uses' => 'EmprestimoController@update']);
+Route::get('emprestimos/{id}/delete', array('as' => 'emprestimos.delete', 'uses' => 'EmprestimoController@getDelete'));
+Route::get('emprestimos/{id}/confirm-delete', array('as' => 'emprestimos.confirm-delete', 'uses' => 'EmprestimoController@getModalDelete'));
+Route::get('emprestimos/{emprestimos}', ['as'=> 'emprestimos.show', 'uses' => 'EmprestimoController@show']);
+Route::get('emprestimos/{emprestimos}/edit', ['as'=> 'emprestimos.edit', 'uses' => 'EmprestimoController@edit']);
+
+});

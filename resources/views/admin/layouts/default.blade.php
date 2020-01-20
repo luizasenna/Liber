@@ -170,7 +170,7 @@
 
         <!-- Notifications -->
         <div id="notific">
-        @include('notifications')
+      
         </div>
 
                 <!-- Content -->

@@ -35,3 +35,11 @@
                Tipos de Livros
     </a>
 </li>
+<li class="{{ Request::is('admin/emprestimos*') ? 'active' : '' }}">
+    <a href="{!! route('admin.emprestimos.index') !!}">
+    <i class="livicon" data-c="#EF6F6C" data-hc="#EF6F6C" data-name="bell" data-size="18"
+               data-loop="true"></i>
+               Emprestimos
+    </a>
+</li>
+
