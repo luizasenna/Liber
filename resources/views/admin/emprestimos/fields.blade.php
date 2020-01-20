@@ -5,9 +5,15 @@
 </div>
 
 <!-- Idlivro Field -->
-<div class="form-group col-sm-12 buscaLivro">
+<div class="form-group  buscaLivro">
     {!! Form::label('idlivro', 'Livro:') !!}
-    <input type="text" class="form-control" id="buscaTextoLivro" placeholder="Insira algo para buscar" onkeyup="locLivro(this.value)" />
+    <input type="text" class="form-control col-sm-9" id="buscaTextoLivro" placeholder="Insira algo para buscar" onkeyup="locLivro(this.value)" />
+    {!! Form::label('idlivro', 'Codigo:') !!}
+    <input type="text" class="form-control col-sm-3" disabled  />
+</div>
+<div class="form-group col-sm-3 ">
+    {!! Form::label('idlivro', 'Codigo:') !!}
+    <input type="text" class="form-control" disabled  />
 </div>
 
 <div class="">

@@ -41,8 +41,10 @@ Emprestimo
             <!-- Idlivro Field -->
             <div class="form-group col-sm-12 buscaLivro">
                 {!! Form::label('idlivro', 'Livro:') !!}
-                <input type="text" class="form-control" id="buscaTextoLivro" name="buscaTextoLivro" required placeholder="Insira algo para buscar" onkeyup="$(window).on('load', locLivro(this.value.toString()))" />
+                <input type="text" class="form-control " id="buscaTextoLivro" name="buscaTextoLivro" required placeholder="Insira algo para buscar" onkeyup="$(window).on('load', locLivro(this.value.toString()))" />
+
             </div>
+
 
             <div class="">
                         <span id="sss" style="background-color:#ccc;"></span>
@@ -55,7 +57,7 @@ Emprestimo
                         let a = @json($livros);
 
                         console.log(Object.values(a));
-                      //  ('#buscaTextoLivro').on('keyUp', locLivro(buscaTextoLivro.value.toString()));
+
                         function locLivro(livro) {
                            var i;
                            var bb;
@@ -63,12 +65,8 @@ Emprestimo
                            var busca;
                            var buscaTitulo;
                            var buscaCodigo;
+                           var teste;
 
-                           function adiciona(){
-                              document.getElementById("buscaTextoLivro").innerHTML = bb.titulo;
-                              document.getElementById("sss").innerHTML = " ";
-
-                            }
 
                            for (i=0;i<a.length;i++) {
                                // bb = console.log(a[i].toLowerCase());
@@ -77,17 +75,20 @@ Emprestimo
                              bb.id = bb.id.toString();
 
 
-
-
                               buscaTitulo = bb.titulo.indexOf(livro.toLowerCase());
                               if (livro != "") {
                                 if (buscaTitulo >= 0) {
+
+
+                              //    teste=bb.titulo;
                                   cc += "<tr style='text-transform:capitalize;'> <td><b>Código: </b>" + bb.id + "</td><td><b>Titulo: </b>" + bb.titulo + "<td><b>Edição:</b> " + bb.edicao + "</td><td><b>Ano: </b> "
-                                      + bb.ano + "</td><td><a href='#' id='selecionaTitulo' class='selecionaTitulo btn btn-sm btn-primary'><span class='fa fa-plus'></span> Selecionar</a></td></tr>";
+                                      + bb.ano + "</td><td><a href='#' id='selecionaTitulo' name='selecionaTitulo'
+                                      class='selecionaTitulo btn btn-sm btn-primary'
+                                      onClick='(window).on('click', adiciona(bb.id))'
+                                       ><span class='fa fa-plus'></span> Selecionar</a></td></tr>";
                                }
                              }
 
-                            // ("#selecionaTitulo").on('click', adiciona());
 
                                buscaId = bb.id.indexOf(livro);
                                if (livro != "") {
@@ -100,17 +101,35 @@ Emprestimo
                            }
                            cc += "</table>";
                            document.getElementById("sss").innerHTML = cc;
+
+
+
+
+
                         }
+                        function  adiciona(teste){
+                        //   alert("teste");
+                        //   document.getElementById("CodigoLivro").value = titulo;
+                      //     ("#CodigoLivro").value = bb.titulo;
+                           document.getElementById("CodigoLivro").value = teste;
+                           }
+              //        ("#selecionaTitulo").click(adiciona());
 
 
                     </script>
 
 
-            <!-- Datacriacao Field -->
-            <div class="form-group col-sm-12">
-                {!! Form::label('datacriacao', 'Data do Emprestimo:') !!}
-                {!! Form::text('datacriacao', null, ['class' => 'form-control']) !!}
-            </div>
+
+                    <div class="form-group  col-sm-3 ">
+                          {!! Form::label('idlivro', 'Codigo do Livro:') !!}
+                          <input type="text" class="form-control " id="CodigoLivro" name="CodigoLivro"disabled  />
+                    </div>
+                    <div class="form-group  col-sm-3">
+                          {!! Form::label('datacriacao', 'Data do Emprestimo:') !!}
+                          {!! Form::text('datacriacao', null, ['class' => 'form-control']) !!}
+                    </div>
+
+
 
             <!-- Datadevolucao Field -->
 

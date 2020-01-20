@@ -170,7 +170,7 @@
 
         <!-- Notifications -->
         <div id="notific">
-      
+
         </div>
 
                 <!-- Content -->
@@ -181,7 +181,7 @@
 
            <div class=" col-md-4 col-sm-10 col-sm-10 text-center pull-center">
 
-               Feito com  <i class="livicon" data-name="heart" data-s="15" style="color:red;"></i> por Soror Azuli  <br/> Versão 1.3 - Server cloudways - Release 24/12/2019 </div>
+               Feito com  <i class="livicon" data-name="heart" data-s="15" style="color:red;"></i> por Soror Azuli  <br/> Versão 1.4 - Server cloudways - Release 24/12/2019 </div>
 
          <!-- Analytics Solid CI-->
 
